@@ -1,8 +1,24 @@
+<script>
+import QuizItem from './components/QuizItem.vue';
+import QuizAPI from './services/QuizAPI';
+
+let APIQuiz = new QuizAPI();
+export default {
+  methods: {
+        async showItem(){
+                console.log("recuperation quiz");
+                result = APIQuiz.getQuiz();
+                
+        }
+  },
+  components: { QuizItem }
+}
+</script>
 
 <template>
  <header>
  <h1>Quiz</h1>
- <input id="buttonquiz" type="button" value="Recuperer les quiz" />
+ <QuizItem @show="showItem"></QuizItem>
  <input id="buttonnew" type="button" value="Nouveau quiz" />
  <div id="quiz"></div>
  </header>
@@ -18,8 +34,8 @@
     <article>
       <h2>Editeur de questions</h2>
       <section id="tools">
-        <img id="add" src="" alt="Nouvelle question"/>
-        <img id="del" src="" alt="Enlever cette question"/>
+        <img id="add" src="./assets/new.png" alt="Nouvelle question"/>
+        <img id="del" src="./assets/delete.png" alt="Enlever cette question"/>
       </section>
       <section id="currenttask"> </section>
     </article>
