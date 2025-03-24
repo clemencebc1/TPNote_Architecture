@@ -1,6 +1,5 @@
 from flask import jsonify,abort,make_response,request, url_for
 from ...app import app
-from ...models.tasks.models import tasks
 
 @app.errorhandler(404)
 def not_found(error) :

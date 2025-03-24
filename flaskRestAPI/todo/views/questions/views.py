@@ -1,6 +1,5 @@
 from flask import jsonify,abort,make_response,request, url_for
 from ...app import app, db
-from ...models.tasks.models import tasks
 from ...models.quiz.CRUD import CRUDquestion as CRUD
 from ...models.quiz.object import Question, Questionnaire, QuestionChoixMultiple, QuestionOpen
 

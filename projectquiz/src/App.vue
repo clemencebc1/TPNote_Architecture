@@ -1,30 +1,126 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+ <header>
+ <h1>Quiz</h1>
+ <input id="buttonquiz" type="button" value="Recuperer les quiz" />
+ <input id="buttonnew" type="button" value="Nouveau quiz" />
+ <div id="quiz"></div>
+ </header>
+
+ <div id='main'>
+
+    <nav id="nav1">
+      <h2>Questions</h2>
+        <div id="taches">
+        </div>
+    </nav>
+
+    <article>
+      <h2>Editeur de questions</h2>
+      <section id="tools">
+        <img id="add" src="" alt="Nouvelle question"/>
+        <img id="del" src="" alt="Enlever cette question"/>
+      </section>
+      <section id="currenttask"> </section>
+    </article>
+ </div>
+ <footer>
+ <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
+ </footer>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style>
+body {
+   font: 24px Menlo, Helvetica;
+   background: #999999;
+  }
+
+  #main {
+   min-height: 800px;
+   margin: 0px;
+   padding: 0px;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-flex-flow: row;
+           flex-flow: row;
+   }
+ 
+  h1,h2,h3,h4,h5,h6{
+    text-align: center;
+  }
+
+  #main > article {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #cccc33;
+   border-radius: 7pt;
+   background: #dddd88;
+   -webkit-flex: 3 1 60%;
+           flex: 3 1 60%;
+   -webkit-order: 2;
+           order: 2;
+   }
+  
+  #main > #nav1 {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #8888bb;
+   border-radius: 7pt;
+   background: #ccccff;
+   -webkit-flex: 1 6 20%;
+           flex: 1 6 20%;
+   -webkit-order: 1;
+           order: 1;
+   }
+  
+  #main > #nav2 {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #8888bb;
+   border-radius: 7pt;
+   background: #ccccff;
+   -webkit-flex: 1 6 20%;
+           flex: 1 6 20%;
+   -webkit-order: 3;
+           order: 3;
+   }
+ 
+  header, footer {
+   display: block;
+   text-align: center;
+   margin: 4px;
+   padding: 5px;
+   min-height: 150px;
+   border: 1px solid #eebb55;
+   border-radius: 7pt;
+   background: #ffeebb;
+   }
+ 
+  header:first-letter, footer:first-letter{
+    font-size: 160%;
+  }
+  /* Too narrow to support three columns */
+  @media all and (max-width: 640px) {
+  
+  header, footer {
+  background: #ffeebb;
+  min-height: 60px;
+  }
+
+   #main, #page {
+    -webkit-flex-flow: column;
+            flex-flow: column;
+            flex-direction: column;
+   }
+
+   #main > article, #main > #nav1, #main > #nav2 {
+    /* Return them to document order */
+    -webkit-order: 0;
+            order: 0;
+   }
+  
+   #main > #nav1, #main > #nav2, header, footer {
+    min-height: 150px;
+   }
+  }
+  </style>
