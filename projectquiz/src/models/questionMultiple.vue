@@ -1,9 +1,15 @@
 <script>
-export default class QuestionMultiple extends QuestionInterface {
+export default class QuestionMultiple{
   constructor() {
     this.question = ''
     this.answer = ''
-    this.options = []
+    this.type = 'multiple'
+    this.options = [
+      { text: '', correct: false },
+      { text: '', correct: false },
+      { text: '', correct: false },
+      { text: '', correct: false }
+    ]
   }
 }
 </script>

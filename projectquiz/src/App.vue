@@ -1,32 +1,25 @@
+<script>
+
+</script>
 
 <template>
- <header>
- <h1>Quiz</h1>
- <input id="buttonquiz" type="button" value="Recuperer les quiz" />
- <input id="buttonnew" type="button" value="Nouveau quiz" />
- <div id="quiz"></div>
- </header>
+    <header>
+        <h1>Les Quizs</h1>
+    </header>
 
- <div id='main'>
+    <div id='main'>
+      
+      <aside id="nav1">
+        <h2>Questionnaire</h2>
+        <input id="button" type="button" value="Recuperer questionnaire" />
+        <div id="questionnaires"> </div>
+      </aside>
 
-    <nav id="nav1">
-      <h2>Questions</h2>
-        <div id="taches">
-        </div>
-    </nav>
 
-    <article>
-      <h2>Editeur de questions</h2>
-      <section id="tools">
-        <img id="add" src="" alt="Nouvelle question"/>
-        <img id="del" src="" alt="Enlever cette question"/>
-      </section>
-      <section id="currenttask"> </section>
-    </article>
- </div>
- <footer>
- <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
- </footer>
+    </div>
+    <footer>
+      <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
+    </footer>
 </template>
 
 <style>
