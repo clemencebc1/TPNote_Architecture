@@ -1,48 +1,48 @@
 <script>
-import QuizItem from './components/QuizItem.vue';
-import QuizAPI from './services/QuizAPI';
-
-let APIQuiz = new QuizAPI();
+import QuizView from './components/containers/QuizView.vue';
 export default {
   methods: {
-        async showItem(){
-                console.log("recuperation quiz");
-                result = APIQuiz.getQuiz();
-                
-        }
+        
   },
-  components: { QuizItem }
+  components: { QuizView }
 }
 </script>
 
 <template>
+
  <header>
- <h1>Quiz</h1>
- <QuizItem @show="showItem"></QuizItem>
- <input id="buttonnew" type="button" value="Nouveau quiz" />
- <div id="quiz"></div>
- </header>
+      <h1>Les Quiz</h1>
+      
+    </header>
 
- <div id='main'>
+    <div id='main'>
+      <QuizView></QuizView>
+      
 
-    <nav id="nav1">
-      <h2>Questions</h2>
-        <div id="taches">
-        </div>
-    </nav>
 
-    <article>
-      <h2>Editeur de questions</h2>
-      <section id="tools">
-        <img id="add" src="./assets/new.png" alt="Nouvelle question"/>
-        <img id="del" src="./assets/delete.png" alt="Enlever cette question"/>
-      </section>
-      <section id="currenttask"> </section>
-    </article>
- </div>
- <footer>
- <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
- </footer>
+      <article>
+        <h2>Editeur de questionnaire</h2>
+        <section class="tools">
+          <img class="add" src="./assets/new.png" alt="Nouveau questionnaire"/>
+          <img id="del" src="./assets/delete.png" alt="Supprimer Questionnaire"/>
+        </section>
+        <section id="currentquestionnaire"> </section>
+        <h3>Liste Questions</h3>
+        <section class="tools" id="questionnairetools"> </section>
+        <section id="listquestions"> </section>
+      </article>
+
+      <article>
+        <h2> Editeur de question</h2>
+        <section class="tools">
+          <img id="delQuestion" src="./assets/delete.png" alt="Supprimer Questionnaire"/>
+        </section>
+        <section id="currentquestion"> </section>
+      </article>
+    </div>
+    <footer>
+      <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
+    </footer>
 </template>
 
 <style>

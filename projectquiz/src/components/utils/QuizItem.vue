@@ -1,9 +1,6 @@
 <script>
 
   export default{ 
-      props: {
-        quiz : Object
-    },
     methods:{
         show : function() {
           this.$emit('show');
