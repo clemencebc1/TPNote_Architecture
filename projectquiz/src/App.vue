@@ -1,21 +1,28 @@
 <script>
+import QuizView from './components/containers/QuizView.vue';
+import QuestionsView from './components/containers/QuestionsView.vue';
+import QuizEditView from './components/containers/QuizEditView.vue';
 
+export default {
+  methods: {
+        
+  },
+  components: { QuizView, QuestionsView, QuizEditView }
+}
 </script>
 
 <template>
-    <header>
-        <h1>Les Quizs</h1>
+
+ <header>
+      <h1>Les Quiz</h1>
+      
     </header>
 
     <div id='main'>
-      
-      <aside id="nav1">
-        <h2>Questionnaire</h2>
-        <input id="button" type="button" value="Recuperer questionnaire" />
-        <div id="questionnaires"> </div>
-      </aside>
-
-
+      <QuizView></QuizView>
+  
+      <QuizEditView></QuizEditView>
+      <QuestionsView></QuestionsView>
     </div>
     <footer>
       <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
