@@ -1,26 +1,31 @@
-<!-- <script>
-import QuizView from './components/containers/QuizView.vue';
-import QuestionsView from './components/containers/QuestionsView.vue';
-import QuizEditView from './components/containers/QuizEditView.vue';
+<script>
+import QuizView from './QuizView.vue';
+import QuestionsView from './QuestionsView.vue';
+import QuizEditView from './QuizEditView.vue';
 
-// export default {
-//   methods: {
+export default {
+  methods: {
         
-//   },
-//   components: { QuizView, QuestionsView, QuizEditView }
-// }
-</script> -->
+  },
+  components: { QuizView, QuestionsView, QuizEditView }
+}
+</script>
 
 <template>
-<p>
-    <strong>Current route path:</strong> {{ this.$route.fullPath }}
-  </p>
-    <main>
-        <RouterView />
-    </main>
+    <header>
+      <h1>Les Quiz</h1>
+    </header>
+    <div id='main'>
+      <QuizView></QuizView>
+      <!-- <QuizEditView></QuizEditView>
+      <QuestionsView></QuestionsView> -->
+    </div>
+    <footer>
+      <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
+    </footer>
 </template>
 
-<!-- <style>
+<style>
 body {
    font: 24px Menlo, Helvetica;
    background: #999999;
@@ -114,4 +119,4 @@ body {
     min-height: 150px;
    }
   }
-  </style> -->
+  </style>

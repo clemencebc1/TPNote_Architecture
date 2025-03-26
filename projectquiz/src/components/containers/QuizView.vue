@@ -16,11 +16,10 @@ export default{
                 console.log("recuperation quiz");
                 let result = await QuizAPI.getQuiz();
                 this.quiz = result['questionnaires'];  
+                console.log(this.quiz); 
         },
         async showQuestion($quiz){
-            let result = await QuizAPI.getQuestion($quiz.id);
-            this.questions = result['questions'];
-
+            this.$router.push({ name: 'quiz', params: { id: $quiz.id } });
         }
     },
     components: { QuizItem, QuestionItem }

@@ -1,4 +1,15 @@
 <script>
+export default {
+  methods: {
+    delQuestion() {
+      this.$store.commit('delQuestion', this.$route.params.id)
+      this.$router.push('/')
+    },
+    printRouteId() {
+      console.log(this.$route.params.id)
+    }
+  }
+}
 
 </script>
 
