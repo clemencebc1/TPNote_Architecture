@@ -1,10 +1,13 @@
 <script>
 import QuizView from './components/containers/QuizView.vue';
+import QuestionsView from './components/containers/QuestionsView.vue';
+import QuizEditView from './components/containers/QuizEditView.vue';
+
 export default {
   methods: {
         
   },
-  components: { QuizView }
+  components: { QuizView, QuestionsView, QuizEditView }
 }
 </script>
 
@@ -17,28 +20,9 @@ export default {
 
     <div id='main'>
       <QuizView></QuizView>
-      
-
-
-      <article>
-        <h2>Editeur de questionnaire</h2>
-        <section class="tools">
-          <img class="add" src="./assets/new.png" alt="Nouveau questionnaire"/>
-          <img id="del" src="./assets/delete.png" alt="Supprimer Questionnaire"/>
-        </section>
-        <section id="currentquestionnaire"> </section>
-        <h3>Liste Questions</h3>
-        <section class="tools" id="questionnairetools"> </section>
-        <section id="listquestions"> </section>
-      </article>
-
-      <article>
-        <h2> Editeur de question</h2>
-        <section class="tools">
-          <img id="delQuestion" src="./assets/delete.png" alt="Supprimer Questionnaire"/>
-        </section>
-        <section id="currentquestion"> </section>
-      </article>
+  
+      <QuizEditView></QuizEditView>
+      <QuestionsView></QuestionsView>
     </div>
     <footer>
       <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
