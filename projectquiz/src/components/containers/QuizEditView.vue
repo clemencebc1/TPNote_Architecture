@@ -1,5 +1,5 @@
 <script>
-import QuizAPI from '../../services/QuizAPI'
+import QuizAPI from '../../services/QuizAPI.js'
 import QuestionItem from '../utils/QuestionItem.vue'
 import QuizItem from '../utils/QuizItem.vue'
 
@@ -13,7 +13,7 @@ export default {
   components: { QuestionItem, QuizItem },
   data() {
     return data
-  },
+  },  
   created() {
     this.$watch(() => this.$route.params.id, this.fetchData, { immediate: true })
   },
@@ -64,7 +64,6 @@ export default {
   },
 }
 </script>
-
 <template>
     <article>
         <h2>Editeur de questionnaire</h2>
@@ -80,8 +79,8 @@ export default {
         <section id="listquestions"> 
             <div v-if="loading">Chargement...</div>
             <div v-else-if="error">{{ error }}</div>
-            <ul v-else>
-                <li v-for="question in questions" :key="question.id">
+            <ul v-else id="questions">
+                <li v-for="question in questions" :key="question.id" class="question">
                     {{ question.title }} 
                     <QuestionItem :quiz="question" @showQuestion="" />
                 </li>
@@ -182,6 +181,10 @@ body {
   
    #main > #nav1, #main > #nav2, header, footer {
     min-height: 150px;
+   }
+
+   .questions {
+    list-style: none;
    }
   }
   </style>

@@ -16,7 +16,13 @@ export default {
       <h1>Les Quiz</h1>
     </header>
     <div id='main'>
+        
+        
       <QuizView></QuizView>
+      
+      <!-- <router-view v-slot="{ QuizEditView }">
+        <component :is="QuizEditView" />
+    </router-view> -->
       <!-- <QuizEditView></QuizEditView>
       <QuestionsView></QuestionsView> -->
     </div>

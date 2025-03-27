@@ -1,5 +1,5 @@
 <script>
-import QuizAPI from '../../services/QuizAPI';
+import QuizAPI from '../../services/QuizAPI.js';
 import QuizItem from '../utils/QuizItem.vue';
 import QuestionItem from '../utils/QuestionItem.vue';
 
