@@ -1,7 +1,6 @@
 import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
 // import { QuestionEditor } from './components/QuestionEditor.vue'
 import App from './App.vue'
-import QuestionEditor from './components/QuestionEditor.vue'
 import HomeComponent from './components/containers/HomeComponent.vue'
 import QuestionsView from './components/containers/QuestionsView.vue'
 import QuizEditView from './components/containers/QuizEditView.vue'
