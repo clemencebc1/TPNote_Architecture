@@ -7,6 +7,7 @@ import QuestionsView from './components/containers/QuestionsView.vue'
 import QuizEditView from './components/containers/QuizEditView.vue'
 import QuizView from './components/containers/QuizView.vue'
 import NotFound404 from './components/containers/NotFound404.vue'
+import NewQuestion from './components/containers/NewQuestion.vue'
 
 // import HomeView from './HomeView.vue'
 // import AboutView from './AboutView.vue'
@@ -34,6 +35,11 @@ const routes = [
         path: '/:patchMatch(.*)*',
         name: 'not-found',
         component: NotFound404
+    },
+    {
+        path: '/quiz/:id/new',
+        name: 'new-question',
+        component: NewQuestion
     }
     // { path: '/question/:id', component: QuestionEditor },
 ]

@@ -21,6 +21,9 @@ export default {
     showQuestion(id){
       this.$router.push({ name: 'questions', params: { id: id['id'] } });
     },
+    addQuestion(){
+      this.$router.push({ name: 'new-question', params: { id: this.$route.params.id } });
+    },
     async fetchData(id) {
       if (!id) return
 
@@ -71,7 +74,7 @@ export default {
     <article>
         <h2>Editeur de questionnaire</h2>
         <section class="tools">
-          <img class="add" src="../../assets/new.png" alt="Nouveau questionnaire"/>
+          <button @click="addQuestion"><img class="add" src="../../assets/new.png" alt="Nouveau questionnaire"/></button>
           <img id="del" src="../../assets/delete.png" alt="Supprimer Questionnaire"/>
         </section>
         <section id="currentquestionnaire">

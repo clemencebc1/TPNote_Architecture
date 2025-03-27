@@ -87,4 +87,22 @@ export default class QuizAPI {
                return false;
          }
     }
+    static async addQuestion(data){
+        const options = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+                  },
+            body: JSON.stringify(data)
+          };
+          try {
+            const response = await fetch(`http://127.0.0.1:5000/todo/api/v1.0/question`, options);
+            const json = await response.json();
+            return true;
+         } catch (error){
+               console.log("error");
+               return false;
+         }
+    }
+
 }
