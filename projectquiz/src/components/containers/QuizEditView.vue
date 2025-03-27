@@ -1,7 +1,7 @@
 <script>
-import QuizAPI from '../../services/QuizAPI.js'
-import QuestionItem from '../utils/QuestionItem.vue'
-import QuizItem from '../utils/QuizItem.vue'
+import QuizAPI from '../../services/QuizAPI.js';
+import QuestionItem from '../utils/QuestionItem.vue';
+import QuizItem from '../utils/QuizItem.vue';
 
 let data = {
     quiz: null,       
@@ -18,6 +18,9 @@ export default {
     this.$watch(() => this.$route.params.id, this.fetchData, { immediate: true })
   },
   methods: {
+    showQuestion(id){
+      this.$router.push({ name: 'questions', params: { id: id['id'] } });
+    },
     async fetchData(id) {
       if (!id) return
 
@@ -82,7 +85,7 @@ export default {
             <ul v-else id="questions">
                 <li v-for="question in questions" :key="question.id" class="question">
                     {{ question.title }} 
-                    <QuestionItem :quiz="question" @showQuestion="" />
+                    <QuestionItem :quiz="question" @showQuestion="showQuestion"></QuestionItem>
                 </li>
             </ul> 
         </section>

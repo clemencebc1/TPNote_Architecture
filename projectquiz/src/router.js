@@ -26,6 +26,11 @@ const routes = [
         component: QuizEditView,
     },
     {
+        path: '/quiz/question/:id',
+        name: 'questions',
+        component: QuestionsView
+    },
+    {
         path: '/:patchMatch(.*)*',
         name: 'not-found',
         component: NotFound404
