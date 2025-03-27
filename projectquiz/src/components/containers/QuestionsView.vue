@@ -1,12 +1,27 @@
 <script>
 import QuizAPI from '../../services/QuizAPI.js';
 let data = {
-    question: []
+    question: [],
+    loading: false,
+    error: null,
+    disabled: false
   }
 export default {
   data() {
     return data
   }, 
+  created() {
+    // this.$watch(() => this.$route.params.id, this.desactivateChangeType(true), { immediate: true })
+    this.$watch(
+      () => this.$route.params.id,
+      (newId) => {
+        if (newId) {
+          this.desactivateChangeType(true);
+        }
+      },
+      { immediate: true }
+    );
+  },
   methods: {
     async delQuestion() {
       console.log("update question");
@@ -29,8 +44,8 @@ export default {
       if(result){
         this.$router.push('/');
       }
-    }
-   
+    },
+    desactivateChangeType() {this.disabled = true;}
   },
   mounted() {
       this.getQuestion(this.$route.params.id);
@@ -54,11 +69,11 @@ export default {
           <fieldset>
         <legend>Type de question</legend>
         <label>
-          <input type="radio" v-model="question.questionType" value="open" />
+          <input type="radio" v-model="question.questionType" value="open" :disabled="disabled"/>
           Question simple
         </label>
         <label>
-          <input type="radio" v-model="question.questionType" value="multiple" />
+          <input type="radio" v-model="question.questionType" value="multiple" :disabled="disabled"/>
           Question multiple
         
         </label>
