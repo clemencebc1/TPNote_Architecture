@@ -24,6 +24,12 @@ export default {
     addQuestion(){
       this.$router.push({ name: 'new-question', params: { id: this.$route.params.id } });
     },
+    async deleteQuiz(){
+      console.log("delete question");
+      console.log(this.quiz);
+      let result = await QuizAPI.deleteQuiz(this.$route.params.id); 
+      this.$router.push('/');
+    },
     async fetchData(id) {
       if (!id) return
 
@@ -75,7 +81,7 @@ export default {
         <h2>Editeur de questionnaire</h2>
         <section class="tools">
           <button @click="addQuestion"><img class="add" src="../../assets/new.png" alt="Nouveau questionnaire"/></button>
-          <img id="del" src="../../assets/delete.png" alt="Supprimer Questionnaire"/>
+          <button @click="deleteQuiz"><img id="del" src="../../assets/delete.png" alt="Supprimer Questionnaire"/></button>
         </section>
         <section id="currentquestionnaire">
           <h3 v-if="quiz">Questionnaire: {{ quiz.title }}</h3>

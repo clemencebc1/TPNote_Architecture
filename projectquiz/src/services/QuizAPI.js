@@ -18,6 +18,24 @@ export default class QuizAPI {
           }
     }
 
+    static async deleteQuiz(id){
+     const options = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+              },
+        body: JSON.stringify(id)
+      };
+      try {
+        const response = await fetch(`http://127.0.0.1:5000/todo/api/v1.0/quiz/`+id, options);
+        const json = await response.json();
+        return true;
+     } catch (error){
+           console.log("error");
+           return false;
+     }
+    }
+
     static async getQuestion(id){
         const options = {
             method: 'GET',
@@ -87,6 +105,7 @@ export default class QuizAPI {
                return false;
          }
     }
+
     static async addQuestion(data){
         const options = {
             method: 'POST',

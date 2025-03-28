@@ -9,7 +9,7 @@ export default {
   }, 
   methods: {
     async delQuestion() {
-      console.log("update question");
+      console.log("delete question");
       let result = await QuizAPI.deleteQuestion(this.question.id); 
       this.$router.push('/');
     },
