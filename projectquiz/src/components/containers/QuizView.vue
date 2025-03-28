@@ -40,3 +40,9 @@ export default{
     <div id="questionnaires"> </div>
 </aside>
 </template>
+
+<style>
+button {
+    display: block;
+}
+</style>
