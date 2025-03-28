@@ -20,6 +20,9 @@ export default{
         },
         async showQuestion($quiz){
             this.$router.push({ name: 'quiz', params: { id: $quiz.id } });
+        }, 
+        addQuiz(){
+            
         }
     },
     components: { QuizItem, QuestionItem }
@@ -29,6 +32,7 @@ export default{
 <template>
 <aside id="nav1">
     <h2>Questionnaire</h2>
+    <button @click="addQuiz"><img class="add" src="../../assets/new.png" alt="Nouveau questionnaire"/></button>
     <QuizItem @show="showQuiz"></QuizItem>
     <li v-for="questionnaire in quiz">
         {{ questionnaire.name }} <QuestionItem :quiz="questionnaire" @showQuestion="showQuestion"></QuestionItem>
