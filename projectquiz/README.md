@@ -29,7 +29,13 @@ Si vous obtenez une erreur liée à Vue.js :
 - ```Could not find vite```, effectuer la commande à la racine du dossier ```projectquiz``` ```npm install```
 
 
-## fonctionnalités
+## Fonctionnalités
 - Router Vue, possibilité d'accéder à une page avec son URL valide
 - Ajouter, supprimer, modifier une question
 - Ajouter, supprimer, modifier un quiz
+
+## Choix d'implémentation
+Pour ce TP, nous avons choisis d'utiliser un router Vue nous permet de naviguer plus facilement entre les pages et de garder les composants indépendants.  
+Chacune des sections (Visualisation quiz, Edition Quiz, Edition question) représentent un composant.  
+De plus, d'autres 'petits' composants ont été fait (/utils) notamment pour les boutons supprimer, ajouter etc.  
+Pour récupérer les données, nous avons fait une API permettant de réaliser les 'fetch' vers le serveur Flask afin d'alléger notre code.
