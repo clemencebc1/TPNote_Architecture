@@ -21,6 +21,8 @@ const routes = [
             left: QuestionsView
         } 
     },
+    { path: '/home',
+        redirect: { name: 'home' } },
     { 
         path: '/quizedit/:id', 
         name: 'quiz',

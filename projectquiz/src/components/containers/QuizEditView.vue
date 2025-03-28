@@ -15,7 +15,7 @@ export default {
     return data
   },  
   created() {
-    this.$watch(() => this.$route.params.id, this.fetchData, { immediate: true })
+    this.$watch(() => this.$route.params.id, this.fetchData, { immediate: true }) // s'execute lorsqu'il change de valeur
   },
   methods: {
     showQuestion(id){
